@@ -97,19 +97,19 @@ public class JobData {
 
         // TODO - implement this method
 
-        ArrayList<HashMap<String, String>> matchedJobs = new ArrayList<>();
+        ArrayList<HashMap<String, String>> resultJobs = new ArrayList<>();
 
-        for (HashMap<String, String> row : allJobs) {
-            for (String key : row.keySet()) {
-                String apartment = row.get(key).toUpperCase();
+        for (HashMap<String, String> job : allJobs) {
+            for (String key : job.keySet()) {
+                String token = job.get(key).toUpperCase();
                 // if key is equal to value, return that job
-                if (apartment.contains(value.toUpperCase())) {
-                    matchedJobs.add(row);
+                if (token.contains(value.toUpperCase())) {
+                    resultJobs.add(job);
                     break;
                 }
             }
         }
-        return matchedJobs;
+        return resultJobs;
     }
 
     /**
